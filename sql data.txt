@@ -1,0 +1,32 @@
+
+
+INSERT INTO expense_categories (name, user_id, created_at, updated_at)
+VALUES
+    ('Groceries', 2, NOW(), NOW()),
+    ('Utilities', 2, NOW(), NOW()),
+    ('Entertainment', 3, NOW(), NOW()),
+    ('Travel', 2, NOW(), NOW()),
+    ('Healthcare', 3, NOW(), NOW());
+
+INSERT INTO expenses (amount, description, date, user_id, expense_category_id, created_at, updated_at)
+VALUES
+    (100.00, 'Grocery shopping', '2023-08-01', 2, 1, NOW(), NOW()),
+    (50.00, 'Movie night', '2023-08-05', 2, 3, NOW(), NOW()),
+    (150.00, 'Electric bill', '2023-08-10', 2, 2, NOW(), NOW()),
+    (200.00, 'Dinner out', '2023-08-02', 3, 3, NOW(), NOW()),
+    (300.00, 'Internet bill', '2023-08-07', 3, 2, NOW(), NOW());
+
+INSERT INTO income_categories (name, user_id, created_at, updated_at)
+VALUES
+    ('Salary', 2, NOW(), NOW()),
+    ('Freelance', 2, NOW(), NOW()),
+    ('Investments', 2, NOW(), NOW()),
+    ('Gifts', 3, NOW(), NOW()),
+    ('Rental Income', 3, NOW(), NOW());
+
+INSERT INTO incomes (amount, description, date, user_id, income_category_id, created_at, updated_at) 
+VALUES (2500.00, 'Monthly salary', '2023-08-01', 2, 1, NOW(), NOW()), 
+(500.00, 'Freelance project', '2023-08-05', 2, 2, NOW(), NOW()), 
+(100.00, 'Dividend income', '2023-08-10', 2, 3, NOW(), NOW()), 
+(1500.00, 'Consulting work', '2023-08-03', 3, 2, NOW(), NOW()), 
+(700.00, 'Stock dividends', '2023-08-08', 3, 3, NOW(), NOW());

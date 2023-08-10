@@ -2,9 +2,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class=" container mx-auto w-full max-w-xs">
+    <div class="container mx-auto w-full max-w-xs">
         <div class="container mx-auto">
-            <h2>Create New Transaction</h2>
+            <h1 class="mt-5 block text-gray-500 font-bold">Create New Transaction</h1>
 
             <form method="POST" action="{{ route('transactions.store') }}">
                 @csrf
@@ -20,8 +20,8 @@
                     type="text" name="description" required>
                 <label class="block text-gray-500 font-bold text-left mb-1 md:mb-0 pr-4" for="type">Type:</label>
                 <select
-                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" name="type"
-                    required>
+                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                    name="type" required>
                     <option value="income">Income</option>
                     <option value="expense">Expense</option>
                 </select>

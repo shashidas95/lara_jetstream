@@ -3,7 +3,7 @@
 
 
 @section('content')
-    <h2>Transaction List</h2>
+    <h2 class="mt-5 block text-gray-500  text-2xl font-bold">Transaction List</h2>
 
     <table class="container mx-auto">
         <thead>
@@ -23,18 +23,23 @@
                     <td>{{ $transaction->description }}</td>
                     <td>{{ ucfirst($transaction->type) }}</td>
                     <td>
-                        <a href="{{ route('transactions.edit', $transaction) }}">Edit</a>
+                        <a class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded mt-5"
+                            href="{{ route('transactions.edit', $transaction) }}">Edit</a>
                         <form method="POST" action="{{ route('transactions.destroy', $transaction) }}"
                             style="display: inline">
                             @csrf
                             @method('DELETE')
-                            <button type="submit">Delete</button>
+                            <button
+                                class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded mt-5"
+                                type="submit">Delete</button>
                         </form>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-
-    <a href="{{ route('transactions.create') }}">Add New Transaction</a>
+    <div>
+        <a class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded mt-5"
+            type="submit" href="{{ route('transactions.create') }}">Add New Transaction</a>
+    </div>
 @endsection

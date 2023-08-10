@@ -5,7 +5,7 @@
 @section('content')
     <h2>Transaction List</h2>
 
-    <table>
+    <table class="container mx-auto">
         <thead>
             <tr>
                 <th>Date</th>

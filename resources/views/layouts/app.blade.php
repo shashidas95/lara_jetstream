@@ -19,7 +19,7 @@
     @livewireStyles
 </head>
 
-<body class="font-sans antialiased">
+<body class=" container text-center mx-auto font-sans antialiased">
     <x-banner />
 
     <div class="min-h-screen bg-gray-100 dark:bg-gray-900">

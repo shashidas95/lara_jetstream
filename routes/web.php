@@ -27,10 +27,11 @@ Route::middleware([
     })->name('dashboard');
 });
 
-use App\Http\Controllers\IncomeCategoryController;
-use App\Http\Controllers\ExpenseCategoryController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\ExpenseController;
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\IncomeCategoryController;
+use App\Http\Controllers\ExpenseCategoryController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -57,6 +58,11 @@ Route::middleware([
     // Expenses
     Route::resource('expenses', ExpenseController::class);
 });
+
+Route::middleware(['auth'])->group(function () {
+    Route::resource('transactions', TransactionController::class);
+});
+
 
 /*  GET|HEAD      expense_categories ............ expense_categories.index › ExpenseCategoryController@index
   POST            expense_categories ............ expense_categories.store › ExpenseCategoryController@store
@@ -89,5 +95,11 @@ Route::middleware([
   DELETE          incomes/{income} .............................. incomes.destroy › IncomeController@destroy
   GET|HEAD        incomes/{income}/edit ............................... incomes.edit › IncomeController@edit
 
-
+  GET|HEAD        transactions ............................ transactions.index › TransactionController@index
+  POST            transactions ............................ transactions.store › TransactionController@store
+  GET|HEAD        transactions/create ................... transactions.create › TransactionController@create
+  GET|HEAD        transactions/{transaction} ................ transactions.show › TransactionController@show
+  PUT|PATCH       transactions/{transaction} ............ transactions.update › TransactionController@update
+  DELETE          transactions/{transaction} .......... transactions.destroy › TransactionController@destroy
+  GET|HEAD        transactions/{transaction}/edit ........... transactions.edit › TransactionController@edit
 */
